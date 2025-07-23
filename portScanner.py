@@ -42,31 +42,31 @@ def scanPort(ipAddr, port):
         sock.connect((ipAddr,port))
 
         # If connection succeeds, print that the port is open
-        print(f"[+] Port {port} is open.") # Removed trailing space here for consistency
+        print(f"[+] Port {port} is open.") 
 
         try:
             banner = sock.recv(1024).decode().strip()
 
             if banner:
-                print(f"    [+] Banner: {banner}") # Removed space before colon
+                print(f"    [+] Banner: {banner}") 
             else:
                 print(f"    [+] No Banner recieved!")
 
         except socket.timeout:
-            # print(f"    [+] Banner receive timed out") # Keep silent or log to a debug file
+            # print(f"    [+] Banner receive timed out") 
             pass
         except Exception as e:
-            # print(f"    [+] Unable to detect version: {e}") # Keep silent or log to a debug file
+            # print(f"    [+] Unable to detect version: {e}") 
             pass
 
     except socket.timeout:
-        # print(f"[-] Port {port} timed out!") # Keep silent
+        # print(f"[-] Port {port} timed out!") 
         pass
     except socket.error as e:
-        # print(f"[-] Port {port} is closed or filtered: {e}") # Keep silent
+        # print(f"[-] Port {port} is closed or filtered: {e}") 
         pass
     except Exception as e:
-        # print(f"[-] Unexpected error: {e}") # Keep silent
+        # print(f"[-] Unexpected error: {e}") 
         pass
     finally:
         if sock:
