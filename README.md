@@ -29,7 +29,7 @@ A simple Python-based port scanner inspired by Nmap, with limited features. This
     ```
 2. **Run the scanner:**
     ```bash
-    python3 port_scanner.py <target_ip>
+    python3 port_scanner.py
     ```
 3. **Optional:** Use custom port lists from the `top-nmap-ports` directory.
 
