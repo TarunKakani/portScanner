@@ -229,11 +229,11 @@ if __name__ == "__main__":
         print("[-] No valid ports to scan after parsing input. Exiting")
         sys.exit(0)
 
-	target_list = [t.strip() for t in targetsInput.split(',') if t.strip()]
+    target_list = [t.strip() for t in targetsInput.split(',') if t.strip()]
 	
-	if not target_list:
-		print("[-] No target entered. Exiting.")
-		sys.exit(1)
+    if not target_list:
+        print("[-] No target entered. Exiting.")
+        sys.exit(1)
 	
-	for target in target_list:
-		scan(target, portsToScan, scanType)
+    for target in target_list:
+	    scan(target, portsToScan, scanType)
